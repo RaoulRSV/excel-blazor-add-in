@@ -1,0 +1,18 @@
+﻿/* Copyright(c) Maarten van Stam. All rights reserved. Licensed under the MIT License. */
+/**
+ * Basic function to show how to insert a value into cell A1 on the selected Excel worksheet.
+ */
+//office.ready(function () {    
+    export function helloButton() {
+
+        return Excel.run(context => {
+
+            // Insert text 'Hello world!' into cell A1.
+            context.workbook.worksheets.getActiveWorksheet().getRange("A1").values = [['Hello world!']];
+
+            // sync the context to run the previous API call, and return.
+            context.sync();
+            return "hoho"
+        });
+    }
+//});
